@@ -6,6 +6,7 @@
     "require": {
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8"
     },
     "autoload": {
         "psr-4": {
@@ -17,8 +18,16 @@
             "Tests\\Gumbo\\Email\\": "tests/"
         }
     },
+    "scripts": {
+        "cs": [
+            "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php"
+        ]
+    },
     "config": {
         "sort-packages": true,
         "optimize-autoloader": true
+    },
+    "scripts-descriptions": {
+        "cs": "Format code using php-cs-fixer"
     }
 }
