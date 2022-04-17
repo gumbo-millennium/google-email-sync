@@ -1,0 +1,24 @@
+{
+    "name": "gumbo-millennium/google-email-sync",
+    "description": "Synchronize email collections with the Google Directory API.",
+    "license": "LGPL-3.0",
+    "type": "package",
+    "require": {
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Gumbo\\Email\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Gumbo\\Email\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
