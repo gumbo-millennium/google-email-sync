@@ -1,0 +1,27 @@
+preset: package
+
+namespace: Gumbo\EmailSync
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Gumbo\EmailSync\Console
+
+model:
+  namespace: Gumbo\EmailSync\Models
+
+provider:
+  namespace: Gumbo\EmailSync\Providers
+
+testing:
+  namespace: Tests\Gumbo\EmailSync

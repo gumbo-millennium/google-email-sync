@@ -4,18 +4,29 @@
     "license": "LGPL-3.0",
     "type": "package",
     "require": {
+        "php": "^8.1",
+        "illuminate/support": "^8.12 || ^9.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.8"
+        "friendsofphp/php-cs-fixer": "^3.8",
+        "orchestra/canvas": "^7.1"
     },
     "autoload": {
         "psr-4": {
-            "Gumbo\\Email\\": "src/"
+            "Gumbo\\EmailSync\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\Gumbo\\Email\\": "tests/"
+            "Tests\\Gumbo\\EmailSync\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+            ],
+            "aliases": {
+            }
         }
     },
     "scripts": {
