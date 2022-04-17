@@ -24,6 +24,7 @@
     "extra": {
         "laravel": {
             "providers": [
+                "Gumbo\\EmailSync\\Providers\\ServiceProvider"
             ],
             "aliases": {
             }
