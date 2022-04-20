@@ -11,6 +11,8 @@ class ServiceProvider extends LaravelServiceProvider
 {
     public function boot()
     {
+        $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
+
         $this->mergeConfigFrom(
             __DIR__ . '/../../config/google-email-sync.php',
             'google-email-sync',
