@@ -1,6 +1,6 @@
 
-# Created by https://www.toptal.com/developers/gitignore/api/composer
-# Edit at https://www.toptal.com/developers/gitignore?templates=composer
+# Created by https://www.toptal.com/developers/gitignore/api/composer,phpunit
+# Edit at https://www.toptal.com/developers/gitignore?templates=composer,phpunit
 
 ### Composer ###
 composer.phar
@@ -10,7 +10,22 @@ composer.phar
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
 # composer.lock
 
-# End of https://www.toptal.com/developers/gitignore/api/composer
+### PHPUnit ###
+# Covers PHPUnit
+# Reference: https://phpunit.de/
+
+# Generated files
+.phpunit.result.cache
+.phpunit.cache
+
+# PHPUnit
+/app/phpunit.xml
+/phpunit.xml
+
+# Build data
+/build/
+
+# End of https://www.toptal.com/developers/gitignore/api/composer,phpunit
 
 ### PHP CS-Fixer ###
 
