@@ -27,6 +27,7 @@
                 "Gumbo\\EmailSync\\Providers\\ServiceProvider"
             ],
             "aliases": {
+                "EmailSync": "Gumbo\\Email\\Facades\\EmailSync"
             }
         }
     },
