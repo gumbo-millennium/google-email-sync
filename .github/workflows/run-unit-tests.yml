@@ -39,10 +39,10 @@ jobs:
       - name: Run Markdown linter
         run: remark .
 
-      - name: Run Markdown linter
+      - name: Run PHP-CS-Fixer
         run: php-cs-fixer fix --dry-run
 
-      - name: Run Markdown linter
+      - name: Run PHP Parallel Linter
         run: parallel-lint $( git ls-files | grep -E '\.php$' )
 
   test:

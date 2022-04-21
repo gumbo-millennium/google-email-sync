@@ -25,6 +25,13 @@ class EmailListMutationEntry extends Model
     use HasFactory;
 
     /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The relations to eager load on every query.
      *
      * @var array
@@ -50,13 +57,6 @@ class EmailListMutationEntry extends Model
     protected $casts = [
         'change' => ChangeType::class,
     ];
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
 
     public function subject(): MorphTo
     {
