@@ -88,7 +88,8 @@ jobs:
       - name: Run codacy-coverage-reporter
         uses: codacy/codacy-coverage-reporter-action@v1
         if: ${{ matrix.main == true && github.ref == 'refs/heads/main' }}
+        continue-on-error: true
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           coverage-reports: ${{ steps.phpunit.outputs.clover }}
-          language: clover
+          language: PHP
