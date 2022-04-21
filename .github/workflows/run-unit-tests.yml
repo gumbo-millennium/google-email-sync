@@ -43,10 +43,10 @@ jobs:
         run: remark .
 
       - name: Run PHP Parallel Linter
-        continue-on-error: ${{ matrix.experimental == true }}
         run: parallel-lint $( git ls-files | grep -E '\.php$' )
 
       - name: Run PHP-CS-Fixer
+        continue-on-error: ${{ matrix.experimental == true }}
         run: php-cs-fixer fix --dry-run
 
   test:
