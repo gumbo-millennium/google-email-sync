@@ -1,7 +1,7 @@
 {
     "name": "gumbo-millennium/google-email-sync",
     "description": "Synchronize email collections with the Google Directory API.",
-    "license": "LGPL-3.0",
+    "license": "LGPL-3.0-or-later",
     "type": "package",
     "require": {
         "php": "^8.1",
