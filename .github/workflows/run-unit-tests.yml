@@ -11,7 +11,6 @@ jobs:
   lint:
     name: Lint PHP ${{ matrix.php }}
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental == true }}
     strategy:
       matrix:
         php:
@@ -43,11 +42,12 @@ jobs:
       - name: Run Markdown linter
         run: remark .
 
+      - name: Run PHP Parallel Linter
+        continue-on-error: ${{ matrix.experimental == true }}
+        run: parallel-lint $( git ls-files | grep -E '\.php$' )
+
       - name: Run PHP-CS-Fixer
         run: php-cs-fixer fix --dry-run
-
-      - name: Run PHP Parallel Linter
-        run: parallel-lint $( git ls-files | grep -E '\.php$' )
 
   test:
     name: "Test Laravel ${{ matrix.laravel }} on PHP ${{ matrix.php }}"
