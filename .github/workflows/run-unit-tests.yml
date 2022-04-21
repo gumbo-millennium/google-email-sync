@@ -8,10 +8,51 @@ on:
       - develop
 
 jobs:
+  lint:
+    name: Lint PHP ${{ matrix.php }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php:
+          - '8.1'
+          - '8.2'
+
+    steps:
+      - name: Setup NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+          cache: npm
+
+      - name: Setup PHP ${{ matrix.php }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: exif,json,mbstring,dom
+          tools: php-cs-fixer, parallel-lint
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install Remark-lint
+        run: npm install -g remark-cli remark-preset-lint-recommended
+
+      - name: Run Markdown linter
+        run: remark .
+
+      - name: Run Markdown linter
+        run: php-cs-fixer fix --dry-run
+
+      - name: Run Markdown linter
+        run: parallel-lint $( git ls-files | grep -E '\.php$' )
+
   test:
     name: "Test Laravel ${{ matrix.laravel }} on PHP ${{ matrix.php }}"
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental == true }}
+    needs:
+      - lint
+
     strategy:
       max-parallel: 12
       matrix:
