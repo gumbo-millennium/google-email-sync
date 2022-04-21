@@ -8,17 +8,22 @@ are not touched.
 
 ## Requirements
 
-- PHP 8.1
-- Composer
-- Laravel 8.x or newer
-- Google API credentials
+To get this package working, you'll need the following:
+
+-   PHP 8.1
+-   Composer
+-   Laravel 8.x or newer
+-   Google API credentials
 
 ## Installation
 
-1. Install the package:
-    ```
+1.  Install the package:
+    ```shell
     composer require gumbo-millennium/google-email-sync
     ```
-2. Update your `GOOGLE_KEY_FILE` environment variable to point to your JSON file.
-4. *TODO*
-5. …
+
+2.  Update your `GOOGLE_KEY_FILE` environment variable to point to your JSON file.
+
+3.  *TODO*
+
+4.  …
