@@ -37,14 +37,14 @@
     },
     "scripts": {
         "post-autoload-dump": [
-            "@php ./vendor/bin/testbench package:discover --ansi"
+            "testbench package:discover --ansi"
         ],
         "cs": [
-            "vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php"
+            "php-cs-fixer fix --config=.php-cs-fixer.dist.php"
         ],
         "test": [
-            "vendor/bin/parallel-lint src/ tests/ config/ database/",
-            "vendor/bin/phpunit"
+            "parallel-lint src/ tests/ config/ database/",
+            "phpunit"
         ]
     },
     "config": {
