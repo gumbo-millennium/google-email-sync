@@ -84,3 +84,10 @@ jobs:
           clover_file: ${{ steps.phpunit.outputs.clover }}
           threshold_alert: 75
           threshold_warning: 95
+
+      - name: Run codacy-coverage-reporter
+        uses: codacy/codacy-coverage-reporter-action@v1
+        if: ${{ matrix.main == true && github.ref == 'refs/heads/main' }}
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: ${{ steps.phpunit.outputs.clover }}
