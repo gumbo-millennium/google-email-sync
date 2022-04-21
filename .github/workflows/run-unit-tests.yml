@@ -110,9 +110,6 @@ jobs:
         with:
           composer-options: "${{ matrix.composer-options }}"
 
-      - name: Lint code
-        run: composer exec -- parallel-lint config/ database/ src/ tests/
-
       - name: Run unit tests
         id: phpunit
         run: |
